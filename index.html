@@ -3,15 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureC-OS</title>
+    <title>PureC OS: a 64-bit operating system written in C</title>
+    <meta name="description" content="PureC OS is a from-scratch 64-bit operating system in C and x86_64 assembly with SMP, Ring 3 userspace, ext2, USB, networking and a graphical desktop.">
+    <link rel="icon" href="static/img/purec-icon-catppuccin.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/modules/base.css">
+    <link rel="stylesheet" href="static/css/modules/typography.css">
+    <link rel="stylesheet" href="static/css/modules/nav.css">
+    <link rel="stylesheet" href="static/css/modules/buttons.css">
+    <link rel="stylesheet" href="static/css/modules/window.css">
+    <link rel="stylesheet" href="static/css/modules/cards.css">
+    <link rel="stylesheet" href="static/css/modules/footer.css">
+    <link rel="stylesheet" href="static/css/pages/index.css">
 </head>
 <body>
-    <main class="main-page">
-        <div class="main-section">
-            <h1 class="main-title">PureC-OS</h1>
-            <p class="welcome-text">Welcome to PureC-OS! This is a 64-bit operating system.</p>
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a href="index.html" class="brand">
+                <img src="static/img/purec-icon-catppuccin.svg" alt="PureC OS">
+                <div>PureC OS<small>64-bit · written in C</small></div>
+            </a>
+            <nav class="links" id="links"><a href="index.html" class="active">Home</a><a href="templates/features.html">Features</a><a href="templates/software.html">Software</a><a href="templates/gallery.html">Gallery</a><a href="templates/install.html">Install</a><a href="templates/changelog.html">Changelog</a><a class="gh" href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">GitHub ↗</a></nav>
+            <button class="burger" id="burger" aria-label="Menu">☰</button>
         </div>
+    </header>
+
+    <main class="main-page">
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="chip"><i></i>v1.2.28 · open source</div>
+                    <h1 class="hero-title">An entire OS,<br>written in <span class="nowrap"><span class="grad">pure C</span><span class="serif">.</span></span></h1>
+                    <p class="lead">Kernel, drivers, filesystem, window manager and a real Ring 3 userspace. No Linux underneath, no shortcuts. Every layer is built from scratch and boots on real hardware.</p>
+                    <div class="cta">
+                        <a class="btn primary" href="templates/install.html">Get PureC OS →</a>
+                        <a class="btn" href="templates/gallery.html">See it running</a>
+                    </div>
+                </div>
+                <div class="stage">
+                    <div class="tilt">
+                        <div class="window">
+                            <div class="win-bar"><b></b><b></b><b></b><span>PureC OS · desktop</span></div>
+                            <img src="static/img/userspace.png" alt="PureC OS desktop" width="1022" height="774">
+                        </div>
+                        <div class="float-card a"><span class="k">syscalls </span><span class="v">~100</span><br><span class="k">ring     </span><span class="v">3</span><br><span class="k">arch     </span><span class="v">x86_64</span></div>
+                        <div class="float-card b"><span class="k">$ </span>uname -a<br><span class="v">PureC 1.2.28 SMP x86_64</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>C &amp; x86_64 assembly</span><span>SMP multiprocessing</span><span>Ring 3 userspace</span><span>VFS + ext2</span><span>USB xHCI / EHCI</span><span>Intel e1000 networking</span><span>Copy-on-write fork</span><span>Limine bootloader</span><span>graphical desktop</span><span>Doom runs on it</span><span>built-in C compiler</span>
+                <span>C &amp; x86_64 assembly</span><span>SMP multiprocessing</span><span>Ring 3 userspace</span><span>VFS + ext2</span><span>USB xHCI / EHCI</span><span>Intel e1000 networking</span><span>Copy-on-write fork</span><span>Limine bootloader</span><span>graphical desktop</span><span>Doom runs on it</span><span>built-in C compiler</span>
+            </div>
+        </div>
+
+        <section>
+            <div class="wrap">
+                <div class="reveal">
+                    <div class="eyebrow">// what is inside</div>
+                    <h2 class="title">Small enough to read,<br><span class="serif">big enough to be real.</span></h2>
+                </div>
+                <div class="stats reveal">
+                    <div class="stat"><b class="grad" data-count="100" data-suffix="+">0</b><span>syscalls in the purec ABI</span></div>
+                    <div class="stat"><b class="grad" data-count="64" data-suffix="-bit">0</b><span>long mode, higher-half kernel</span></div>
+                    <div class="stat"><b class="grad" data-count="18">0</b><span>desktop applications</span></div>
+                    <div class="stat"><b class="grad" data-count="27">0</b><span>documented hardware drivers</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="split">
+                    <div class="reveal">
+                        <div class="eyebrow">// boots on real metal</div>
+                        <h2 class="title">Watch it <span class="serif">come alive.</span></h2>
+                        <p class="sub">From Limine handoff to a drawn desktop in seconds. It runs in VirtualBox and QEMU, and on bare-metal machines with AHCI storage and USB input.</p>
+                        <div class="cta"><a class="btn" href="templates/features.html">Explore the architecture →</a></div>
+                    </div>
+                    <div class="window reveal">
+                        <div class="win-bar"><b></b><b></b><b></b><span>serial console · illustrative boot log</span></div>
+                        <div class="boot" id="boot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="reveal">
+                    <div class="eyebrow">// highlights</div>
+                    <h2 class="title">Everything an OS needs,<br><span class="serif">nothing it does not.</span></h2>
+                </div>
+                <div class="bento">
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-blue)">◧</div>
+                        <h3>A real graphical desktop</h3>
+                        <p>Compositor with double buffering, draggable windows, taskbar, icon grid with snap-to-cell, interface scaling up to 400% and a wizard-style installer. All drawn by the OS itself.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-mauve)">3</div>
+                        <h3>True Ring 3</h3>
+                        <p>User programs run unprivileged behind a clean syscall boundary. Fork, execve, pipes and signals are in.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-green)">⇄</div>
+                        <h3>Networking</h3>
+                        <p>Intel PRO/1000 and PCnet NICs, with 802.11 association groundwork for Wi-Fi.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-peach)">▤</div>
+                        <h3>VFS and ext2</h3>
+                        <p>Mount-table VFS with a full ext2 implementation. Install it to a disk and boot from it.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-pink)">☠</div>
+                        <h3>Runs Doom</h3>
+                        <p>SDL2 works. So does Chocolate Doom with Freedoom assets, plus Lua, MicroPython and TinyCC.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="banner reveal">
+                    <div class="eyebrow">// open source</div>
+                    <h2 class="title">Read it. Build it. <span class="serif">Break it.</span></h2>
+                    <p class="sub">PureC OS is developed in the open. Clone the repository, build the ISO and boot your own kernel in minutes.</p>
+                    <div class="cta">
+                        <a class="btn primary" href="templates/install.html">Build instructions →</a>
+                        <a class="btn" href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">★ Star on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <a href="index.html" class="brand"><img src="static/img/purec-icon-catppuccin.svg" alt="">PureC OS</a>
+                    <p>A hand-written 64-bit operating system: kernel, drivers, filesystem, GUI and userspace, all built from scratch.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a href="templates/features.html">Features</a>
+                    <a href="templates/software.html">Ported software</a>
+                    <a href="templates/gallery.html">Gallery</a>
+                    <a href="templates/changelog.html">Changelog</a>
+                </div>
+                <div>
+                    <h5>Get it</h5>
+                    <a href="templates/install.html">Install guide</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">Source code</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/releases" target="_blank" rel="noopener">Releases</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/issues" target="_blank" rel="noopener">Report a bug</a>
+                </div>
+                <div>
+                    <h5>Docs</h5>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/docs/syscalls-reference.md" target="_blank" rel="noopener">Syscall reference</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/tree/main/docs/drivers" target="_blank" rel="noopener">Driver docs</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/ported-software.md" target="_blank" rel="noopener">Porting guide</a>
+                </div>
+            </div>
+            <div class="legal"><span>© 2026 PureC OS</span></div>
+        </div>
+    </footer>
+
+    <script src="static/js/nav.js"></script>
+    <script src="static/js/reveal.js"></script>
+    <script src="static/js/spotlight.js"></script>
+    <script src="static/js/tilt.js"></script>
+    <script src="static/js/counters.js"></script>
+    <script src="static/js/boot.js"></script>
 </body>
 </html>

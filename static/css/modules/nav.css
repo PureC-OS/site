@@ -1,0 +1,117 @@
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    background: var(--color-nav-bg);
+    border-bottom: 1px solid var(--color-line);
+}
+
+.nav-in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: var(--text-19-px);
+    letter-spacing: -0.01em;
+}
+
+.brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    transition: transform 0.6s cubic-bezier(.2, .9, .3, 1.4);
+}
+
+.brand:hover img {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.brand small {
+    display: block;
+    font-weight: 500;
+    font-size: var(--text-12-px);
+    color: var(--color-overlay);
+    letter-spacing: 0.02em;
+    margin-top: -3px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.links a {
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: var(--text-15-px);
+    font-weight: 500;
+    color: var(--color-subtext);
+    transition: color 0.2s, background 0.2s;
+}
+
+.links a:hover {
+    color: var(--color-text);
+    background: var(--color-hover);
+}
+
+.links a.active {
+    color: var(--color-text);
+    background: var(--color-active);
+}
+
+.links a.gh {
+    margin-left: 8px;
+    border: 1px solid var(--color-surface1);
+    color: var(--color-text);
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: 1px solid var(--color-surface1);
+    color: var(--color-text);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: var(--text-20-px);
+    cursor: pointer;
+}
+
+@media (max-width: 960px) {
+    .burger {
+        display: block;
+    }
+
+    .links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 24px 22px;
+        background: var(--color-mantle);
+        border-bottom: 1px solid var(--color-surface0);
+        display: none;
+    }
+
+    .links.open {
+        display: flex;
+    }
+
+    .links a.gh {
+        margin: 6px 0 0;
+        text-align: center;
+    }
+}

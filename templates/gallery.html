@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery · PureC OS</title>
+    <meta name="description" content="Screenshots of the PureC OS desktop, system tools and networking.">
+    <link rel="icon" href="../static/img/purec-icon-catppuccin.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/modules/base.css">
+    <link rel="stylesheet" href="../static/css/modules/typography.css">
+    <link rel="stylesheet" href="../static/css/modules/nav.css">
+    <link rel="stylesheet" href="../static/css/modules/buttons.css">
+    <link rel="stylesheet" href="../static/css/modules/window.css">
+    <link rel="stylesheet" href="../static/css/modules/cards.css">
+    <link rel="stylesheet" href="../static/css/modules/footer.css">
+    <link rel="stylesheet" href="../static/css/pages/gallery.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a href="../index.html" class="brand">
+                <img src="../static/img/purec-icon-catppuccin.svg" alt="PureC OS">
+                <div>PureC OS<small>64-bit · written in C</small></div>
+            </a>
+            <nav class="links" id="links"><a href="../index.html">Home</a><a href="features.html">Features</a><a href="software.html">Software</a><a href="gallery.html" class="active">Gallery</a><a href="install.html">Install</a><a href="changelog.html">Changelog</a><a class="gh" href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">GitHub ↗</a></nav>
+            <button class="burger" id="burger" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main class="main-page">
+        <div class="wrap page-head reveal">
+            <div class="eyebrow">// gallery</div>
+            <h1 class="page-title">Real screenshots.<br><span class="serif grad">No mock-ups.</span></h1>
+            <p class="sub">Everything below is PureC OS rendering itself. Click any image to enlarge.</p>
+        </div>
+
+        <section>
+            <div class="wrap">
+                <div class="gallery">
+                    <figure class="shot window reveal"><img src="../static/img/bare-metal-userspace.png" alt="Bare metal" loading="lazy"><figcaption><b>Bare metal</b>The desktop running on real hardware, not a VM.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/userspace.png" alt="Desktop" loading="lazy"><figcaption><b>Desktop</b>Icon grid with Clock, Calc, Files, HTOP, Terminal, HexEdit, Tetris and Disks.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/system-monitor.png" alt="System monitor" loading="lazy"><figcaption><b>System monitor</b>Per-core CPU load in real time, taken straight from the kernel.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/system-settings.png" alt="Settings" loading="lazy"><figcaption><b>Settings</b>Display mode, interface scale, fonts and personalization.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/filesystem.png" alt="Files" loading="lazy"><figcaption><b>Files</b>Browsing the ext2 filesystem through the VFS.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/network.png" alt="Network" loading="lazy"><figcaption><b>Network</b>Interface status for the Intel and PCnet adapters.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/Hex.png" alt="HexEdit" loading="lazy"><figcaption><b>HexEdit</b>Edit raw bytes of files and disks.</figcaption></figure>
+                    <figure class="shot window reveal"><img src="../static/img/Boot.png" alt="Boot" loading="lazy"><figcaption><b>Boot</b>Kernel startup on the way to the desktop.</figcaption></figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <a href="../index.html" class="brand"><img src="../static/img/purec-icon-catppuccin.svg" alt="">PureC OS</a>
+                    <p>A hand-written 64-bit operating system: kernel, drivers, filesystem, GUI and userspace, all built from scratch.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a href="features.html">Features</a>
+                    <a href="software.html">Ported software</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="changelog.html">Changelog</a>
+                </div>
+                <div>
+                    <h5>Get it</h5>
+                    <a href="install.html">Install guide</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">Source code</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/releases" target="_blank" rel="noopener">Releases</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/issues" target="_blank" rel="noopener">Report a bug</a>
+                </div>
+                <div>
+                    <h5>Docs</h5>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/docs/syscalls-reference.md" target="_blank" rel="noopener">Syscall reference</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/tree/main/docs/drivers" target="_blank" rel="noopener">Driver docs</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/ported-software.md" target="_blank" rel="noopener">Porting guide</a>
+                </div>
+            </div>
+            <div class="legal"><span>© 2026 PureC OS</span></div>
+        </div>
+    </footer>
+
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/reveal.js"></script>
+    <script src="../static/js/spotlight.js"></script>
+    <script src="../static/js/lightbox.js"></script>
+</body>
+</html>

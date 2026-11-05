@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software · PureC OS</title>
+    <meta name="description" content="Third-party software ported to PureC OS: Lua, Vim, MicroPython, TinyCC, SDL2, Chocolate Doom, GNU Make and more.">
+    <link rel="icon" href="../static/img/purec-icon-catppuccin.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/modules/base.css">
+    <link rel="stylesheet" href="../static/css/modules/typography.css">
+    <link rel="stylesheet" href="../static/css/modules/nav.css">
+    <link rel="stylesheet" href="../static/css/modules/buttons.css">
+    <link rel="stylesheet" href="../static/css/modules/window.css">
+    <link rel="stylesheet" href="../static/css/modules/cards.css">
+    <link rel="stylesheet" href="../static/css/modules/footer.css">
+    <link rel="stylesheet" href="../static/css/modules/tabs.css">
+    <link rel="stylesheet" href="../static/css/pages/software.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a href="../index.html" class="brand">
+                <img src="../static/img/purec-icon-catppuccin.svg" alt="PureC OS">
+                <div>PureC OS<small>64-bit · written in C</small></div>
+            </a>
+            <nav class="links" id="links"><a href="../index.html">Home</a><a href="features.html">Features</a><a href="software.html" class="active">Software</a><a href="gallery.html">Gallery</a><a href="install.html">Install</a><a href="changelog.html">Changelog</a><a class="gh" href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">GitHub ↗</a></nav>
+            <button class="burger" id="burger" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main class="main-page">
+        <div class="wrap page-head reveal">
+            <div class="eyebrow">// ported software</div>
+            <h1 class="page-title">Real programs,<br><span class="serif grad">running on a hobby kernel.</span></h1>
+            <p class="sub">PureC OS ships a hosted libc, libm and a dynamic loader. That is enough to bring serious software over. Here is what works today and what is still in progress.</p>
+        </div>
+
+        <section>
+            <div class="wrap">
+                <div class="tabs reveal" data-tabs="#sw">
+                    <button class="tab on" data-filter="all">All</button>
+                    <button class="tab" data-filter="lang">Languages</button>
+                    <button class="tab" data-filter="game">Games and graphics</button>
+                    <button class="tab" data-filter="tool">Tools</button>
+                    <button class="tab" data-filter="kernel">Kernel modules</button>
+                </div>
+                <div class="table-wrap reveal" id="sw">
+                    <table>
+                        <thead><tr><th>Software</th><th>Version</th><th>License</th><th>Status</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr data-kind="lang"><td><b>Lua</b></td><td>5.4.8</td><td>MIT</td><td><span class="tag ok">working</span></td><td>Full REPL with line echo. <code>math</code> library comes next now that libm has landed.</td></tr>
+                            <tr data-kind="lang"><td><b>MicroPython</b></td><td>1.30</td><td>MIT</td><td><span class="tag ok">working</span></td><td>Interactive REPL, no floats yet.</td></tr>
+                            <tr data-kind="lang tool"><td><b>TinyCC</b></td><td>0.9.28rc</td><td>LGPL-2.1</td><td><span class="tag ok">working</span></td><td>Compile and run C programs on the OS itself.</td></tr>
+                            <tr data-kind="game"><td><b>SDL2</b></td><td>2.33.0</td><td>zlib</td><td><span class="tag ok">working</span></td><td>Software rendering. Includes an in-house SDL2_mixer shim with an OPL hook.</td></tr>
+                            <tr data-kind="game"><td><b>Chocolate Doom</b></td><td>3.1.1</td><td>GPL-2.0</td><td><span class="tag ok">working</span></td><td>Doom only, no netplay. Plays with Freedoom 0.13.0 assets.</td></tr>
+                            <tr data-kind="tool"><td><b>Vim</b></td><td>9.2</td><td>Vim</td><td><span class="tag wip">in progress</span></td><td>Builds and links with tiny features. Terminal layer is ready, not yet run on PureC OS.</td></tr>
+                            <tr data-kind="tool"><td><b>GNU Make</b></td><td>4.4.1</td><td>GPL-3.0+</td><td><span class="tag wip">in progress</span></td><td>Starts and reports its version. Makefile runs not verified, single job only.</td></tr>
+                            <tr data-kind="kernel"><td><b>uACPI</b></td><td>6.1.0</td><td>Apache-2.0 / MIT</td><td><span class="tag wip">in progress</span></td><td>AML interpreter integrated into the ACPI module, executor path is work in progress.</td></tr>
+                            <tr data-kind="kernel"><td><b>wolfSSL</b></td><td>5.9.4</td><td>GPLv2/3</td><td><span class="tag lib">buildable</span></td><td>Builds as a module. No consumer yet: PureC OS uses its own crypto library.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap split">
+                <div class="reveal">
+                    <div class="eyebrow">// bring your own</div>
+                    <h2 class="title">Want to port <span class="serif">something new?</span></h2>
+                    <p class="sub">Third-party code lives in organization forks so upstream stays auditable. The porting guide explains the conventions, the manifest and the build glue.</p>
+                    <div class="cta"><a class="btn primary" href="https://github.com/PureC-OS/PureC-OS/blob/main/ported-software.md" target="_blank" rel="noopener">Read the porting guide ↗</a></div>
+                </div>
+                <div class="card reveal">
+                    <div class="ico" style="--c: var(--color-green)">✓</div>
+                    <h3>Related repositories</h3>
+                    <ul>
+                        <li>PureC-OS-ACPI: ACPI subsystem</li>
+                        <li>libxcrypt: SHA-512 password hashing</li>
+                        <li>PureC-TCC: C compiler port</li>
+                        <li>PureC-OS-Userspace: desktop and apps</li>
+                        <li>PureC-notepad-OS: Notepad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <a href="../index.html" class="brand"><img src="../static/img/purec-icon-catppuccin.svg" alt="">PureC OS</a>
+                    <p>A hand-written 64-bit operating system: kernel, drivers, filesystem, GUI and userspace, all built from scratch.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a href="features.html">Features</a>
+                    <a href="software.html">Ported software</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="changelog.html">Changelog</a>
+                </div>
+                <div>
+                    <h5>Get it</h5>
+                    <a href="install.html">Install guide</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">Source code</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/releases" target="_blank" rel="noopener">Releases</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/issues" target="_blank" rel="noopener">Report a bug</a>
+                </div>
+                <div>
+                    <h5>Docs</h5>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/docs/syscalls-reference.md" target="_blank" rel="noopener">Syscall reference</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/tree/main/docs/drivers" target="_blank" rel="noopener">Driver docs</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/ported-software.md" target="_blank" rel="noopener">Porting guide</a>
+                </div>
+            </div>
+            <div class="legal"><span>© 2026 PureC OS</span></div>
+        </div>
+    </footer>
+
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/reveal.js"></script>
+    <script src="../static/js/spotlight.js"></script>
+    <script src="../static/js/filter.js"></script>
+</body>
+</html>

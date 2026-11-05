@@ -104,6 +104,47 @@
     --text-78-px: 78px;
     --text-79-px: 79px;
     --text-80-px: 80px;
+
+
+    --text-font-sans: "Inter", system-ui, sans-serif;
+    --text-font-mono: "JetBrains Mono", ui-monospace, monospace;
+    --text-font-serif-accent: "Instrument Serif", Georgia, serif;
+
+
+    --color-crust: #11111b;
+    --color-mantle: #181825;
+    --color-base: #1e1e2e;
+    --color-surface0: #313244;
+    --color-surface1: #45475a;
+    --color-overlay: #6c7086;
+    --color-subtext: #a6adc8;
+    --color-text: #cdd6f4;
+    --color-blue: #89b4fa;
+    --color-mauve: #cba6f7;
+    --color-green: #a6e3a1;
+    --color-peach: #fab387;
+    --color-pink: #f5c2e7;
+    --color-teal: #94e2d5;
+    --color-yellow: #f9e2af;
+    --color-red: #f38ba8;
+    --color-black: #000;
+
+    --color-accent: var(--color-blue);
+    --color-accent2: var(--color-mauve);
+
+    --color-line: rgba(205, 214, 244, 0.07);
+    --color-grid-line: rgba(205, 214, 244, 0.035);
+    --color-faint: rgba(205, 214, 244, 0.04);
+    --color-hover: rgba(205, 214, 244, 0.06);
+    --color-active: rgba(205, 214, 244, 0.09);
+    --color-nav-bg: rgba(17, 17, 27, 0.72);
+    --color-glass: rgba(24, 24, 37, 0.92);
+    --color-glass-soft: rgba(24, 24, 37, 0.7);
+    --color-backdrop: rgba(17, 17, 27, 0.92);
+    --color-shadow: rgba(0, 0, 0, 0.7);
+    --color-shadow-deep: rgba(0, 0, 0, 0.8);
+    --color-shadow-soft: rgba(0, 0, 0, 0.6);
+    --color-inset: rgba(255, 255, 255, 0.02);
 }
 
 body {

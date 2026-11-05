@@ -1,0 +1,66 @@
+.gallery {
+    columns: 2;
+    column-gap: 22px;
+    margin-top: 48px;
+}
+
+.shot {
+    break-inside: avoid;
+    margin-bottom: 22px;
+    cursor: zoom-in;
+    transition: transform 0.3s;
+}
+
+.shot:hover {
+    transform: translateY(-5px) scale(1.01);
+}
+
+.shot figcaption {
+    padding: 14px 18px;
+    background: var(--color-mantle);
+    font-size: var(--text-15-px);
+    color: var(--color-subtext);
+    border-top: 1px solid var(--color-surface0);
+}
+
+.shot figcaption b {
+    color: var(--color-text);
+    display: block;
+    font-size: var(--text-16-px);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: var(--color-backdrop);
+    backdrop-filter: blur(10px);
+    display: none;
+    place-items: center;
+    padding: 30px;
+    cursor: zoom-out;
+}
+
+.lightbox.on {
+    display: grid;
+    animation: fade 0.25s;
+}
+
+.lightbox img {
+    max-height: 90vh;
+    border-radius: 14px;
+    border: 1px solid var(--color-surface1);
+    box-shadow: 0 40px 100px var(--color-shadow-deep);
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .gallery {
+        columns: 1;
+    }
+}

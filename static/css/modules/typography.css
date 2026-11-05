@@ -1,0 +1,69 @@
+.serif {
+    font-family: var(--text-font-serif-accent);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.grad {
+    background: linear-gradient(100deg, var(--color-accent), var(--color-accent2) 55%, var(--color-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shine 7s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.eyebrow {
+    font-family: var(--text-font-mono);
+    font-size: var(--text-13-px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.title {
+    font-family: var(--text-font-sans);
+    font-size: clamp(var(--text-32-px), 4.2vw, var(--text-54-px));
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin: 14px 0 16px;
+    color: var(--main-text);
+    text-align: var(--text-left);
+}
+
+.title .serif {
+    font-size: 1.08em;
+}
+
+.sub {
+    color: var(--color-subtext);
+    font-size: var(--text-19-px);
+    max-width: 640px;
+}
+
+.lead {
+    font-size: var(--text-20-px);
+    color: var(--color-subtext);
+    max-width: 560px;
+}
+
+.page-title {
+    font-family: var(--text-font-sans);
+    font-size: clamp(var(--text-40-px), 5.4vw, var(--text-72-px));
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    margin: 14px 0;
+    text-align: var(--text-left);
+}
+
+.nowrap {
+    white-space: nowrap;
+}

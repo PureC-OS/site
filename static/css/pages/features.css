@@ -1,0 +1,32 @@
+.arch {
+    display: grid;
+    gap: 10px;
+}
+
+.layer {
+    padding: 18px 22px;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+    background: color-mix(in srgb, var(--c) 9%, var(--color-mantle));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: var(--text-15-px);
+    transition: transform 0.25s;
+}
+
+.layer:hover {
+    transform: translateX(8px);
+}
+
+.layer b {
+    color: var(--c);
+    font-family: var(--text-font-mono);
+    font-size: var(--text-14-px);
+}
+
+.layer span {
+    color: var(--color-subtext);
+}

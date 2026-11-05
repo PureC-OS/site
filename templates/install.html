@@ -3,9 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureC-OS-Install-Pages</title>
+    <title>Install · PureC OS</title>
+    <meta name="description" content="Build PureC OS from source and run it in VirtualBox or QEMU.">
+    <link rel="icon" href="../static/img/purec-icon-catppuccin.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/modules/base.css">
+    <link rel="stylesheet" href="../static/css/modules/typography.css">
+    <link rel="stylesheet" href="../static/css/modules/nav.css">
+    <link rel="stylesheet" href="../static/css/modules/buttons.css">
+    <link rel="stylesheet" href="../static/css/modules/window.css">
+    <link rel="stylesheet" href="../static/css/modules/cards.css">
+    <link rel="stylesheet" href="../static/css/modules/footer.css">
+    <link rel="stylesheet" href="../static/css/modules/tabs.css">
+    <link rel="stylesheet" href="../static/css/pages/install.css">
 </head>
 <body>
-    
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a href="../index.html" class="brand">
+                <img src="../static/img/purec-icon-catppuccin.svg" alt="PureC OS">
+                <div>PureC OS<small>64-bit · written in C</small></div>
+            </a>
+            <nav class="links" id="links"><a href="../index.html">Home</a><a href="features.html">Features</a><a href="software.html">Software</a><a href="gallery.html">Gallery</a><a href="install.html" class="active">Install</a><a href="changelog.html">Changelog</a><a class="gh" href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">GitHub ↗</a></nav>
+            <button class="burger" id="burger" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main class="main-page">
+        <div class="wrap page-head reveal">
+            <div class="eyebrow">// install</div>
+            <h1 class="page-title">From <span class="serif grad">git clone</span><br>to a booted desktop.</h1>
+            <p class="sub">PureC OS is built from source. You need a Linux host, a C toolchain, NASM, Limine and an x86_64-elf cross compiler.</p>
+        </div>
+
+        <section>
+            <div class="wrap">
+                <div class="steps">
+                    <div class="step reveal">
+                        <div class="body">
+                            <h3>Install the toolchain</h3>
+                            <p>Pick your distribution. A cross compiler for <code>x86_64-elf</code> is required.</p>
+                            <div class="tabs" data-pick="tc">
+                                <button class="tab on" data-show="ubuntu">Ubuntu</button>
+                                <button class="tab" data-show="fedora">Fedora</button>
+                                <button class="tab" data-show="arch">Arch</button>
+                            </div>
+                            <div class="copy" data-group="tc" data-id="ubuntu"><div class="code"><span class="p">sudo</span> apt update
+<span class="p">sudo</span> apt install make gcc g++ limine nasm xorriso mtools
+<span class="c"># cross compiler: build binutils + gcc for x86_64-elf</span>
+<span class="c"># (full recipe in the README)</span></div></div>
+                            <div class="copy" data-group="tc" data-id="fedora" hidden><div class="code"><span class="p">sudo</span> dnf update --refresh
+<span class="p">sudo</span> dnf install make gcc g++ limine nasm xorriso mtools
+<span class="c"># cross compiler: build binutils + gcc for x86_64-elf</span>
+<span class="c"># (full recipe in the README)</span></div></div>
+                            <div class="copy" data-group="tc" data-id="arch" hidden><div class="code"><span class="p">sudo</span> pacman -S --needed base-devel git make gcc limine nasm
+<span class="c"># cross compiler from the AUR</span>
+yay -S x86_64-elf-gcc x86_64-elf-binutils</div></div>
+                        </div>
+                    </div>
+                    <div class="step reveal">
+                        <div class="body">
+                            <h3>Clone and build</h3>
+                            <p>The Python build script fetches the extra components (ACPI, crypto, TinyCC, userspace) automatically and produces the ISO.</p>
+                            <div class="copy"><div class="code"><span class="p">git</span> clone https://github.com/PureC-OS/PureC-OS.git
+<span class="o">cd</span> PureC-OS
+<span class="p">python</span> purec.py</div></div>
+                        </div>
+                    </div>
+                    <div class="step reveal">
+                        <div class="body">
+                            <h3>Boot it</h3>
+                            <p>Create a VM in VirtualBox or QEMU, attach the built ISO and start it. VirtualBox gives you the absolute mouse pointer and the Intel e1000 network card.</p>
+                            <p>Choose <b>Install</b> on the desktop to run the graphical installer and put PureC OS on a disk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="reveal">
+                    <div class="eyebrow">// requirements</div>
+                    <h2 class="title">What it was <span class="serif">built with.</span></h2>
+                </div>
+                <div class="grid g2">
+                    <div class="card reveal">
+                        <h3>Toolchain</h3>
+                        <ul>
+                            <li>GCC and G++ 16.2</li>
+                            <li>x86_64-elf cross GCC 15.2</li>
+                            <li>NASM 3.02</li>
+                            <li>GNU Make 4.4.1</li>
+                            <li>Limine 12.8</li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Supported virtual hardware</h3>
+                        <ul>
+                            <li>VirtualBox 7.2 and QEMU</li>
+                            <li>Intel PRO/1000 MT Desktop 82540EM</li>
+                            <li>Intel PRO/1000 T Server 82543GC</li>
+                            <li>AMD PCnet-PCI II (Am79C970A)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cta reveal">
+                    <a class="btn primary" href="https://github.com/PureC-OS/PureC-OS#build-toolschain" target="_blank" rel="noopener">Full build guide on GitHub ↗</a>
+                    <a class="btn" href="https://github.com/PureC-OS/PureC-OS/issues" target="_blank" rel="noopener">Something broke? Open an issue ↗</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <a href="../index.html" class="brand"><img src="../static/img/purec-icon-catppuccin.svg" alt="">PureC OS</a>
+                    <p>A hand-written 64-bit operating system: kernel, drivers, filesystem, GUI and userspace, all built from scratch.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a href="features.html">Features</a>
+                    <a href="software.html">Ported software</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="changelog.html">Changelog</a>
+                </div>
+                <div>
+                    <h5>Get it</h5>
+                    <a href="install.html">Install guide</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">Source code</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/releases" target="_blank" rel="noopener">Releases</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/issues" target="_blank" rel="noopener">Report a bug</a>
+                </div>
+                <div>
+                    <h5>Docs</h5>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/docs/syscalls-reference.md" target="_blank" rel="noopener">Syscall reference</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/tree/main/docs/drivers" target="_blank" rel="noopener">Driver docs</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/ported-software.md" target="_blank" rel="noopener">Porting guide</a>
+                </div>
+            </div>
+            <div class="legal"><span>© 2026 PureC OS</span></div>
+        </div>
+    </footer>
+
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/reveal.js"></script>
+    <script src="../static/js/spotlight.js"></script>
+    <script src="../static/js/pick.js"></script>
+    <script src="../static/js/copy.js"></script>
 </body>
 </html>

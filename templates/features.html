@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features · PureC OS</title>
+    <meta name="description" content="Kernel architecture, drivers, filesystem, networking and userspace of PureC OS.">
+    <link rel="icon" href="../static/img/purec-icon-catppuccin.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/modules/base.css">
+    <link rel="stylesheet" href="../static/css/modules/typography.css">
+    <link rel="stylesheet" href="../static/css/modules/nav.css">
+    <link rel="stylesheet" href="../static/css/modules/buttons.css">
+    <link rel="stylesheet" href="../static/css/modules/window.css">
+    <link rel="stylesheet" href="../static/css/modules/cards.css">
+    <link rel="stylesheet" href="../static/css/modules/footer.css">
+    <link rel="stylesheet" href="../static/css/pages/features.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a href="../index.html" class="brand">
+                <img src="../static/img/purec-icon-catppuccin.svg" alt="PureC OS">
+                <div>PureC OS<small>64-bit · written in C</small></div>
+            </a>
+            <nav class="links" id="links"><a href="../index.html">Home</a><a href="features.html" class="active">Features</a><a href="software.html">Software</a><a href="gallery.html">Gallery</a><a href="install.html">Install</a><a href="changelog.html">Changelog</a><a class="gh" href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">GitHub ↗</a></nav>
+            <button class="burger" id="burger" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main class="main-page">
+        <div class="wrap page-head reveal">
+            <div class="eyebrow">// features</div>
+            <h1 class="page-title">Built layer by layer,<br><span class="serif grad">understood end to end.</span></h1>
+            <p class="sub">A tour of what PureC OS implements today, from the first instruction after the bootloader to the pixels on your screen.</p>
+        </div>
+
+        <section>
+            <div class="wrap split">
+                <div class="reveal">
+                    <div class="eyebrow">// architecture</div>
+                    <h2 class="title">The stack, <span class="serif">top to bottom.</span></h2>
+                    <p class="sub">Everything in the stack is code in this repository, written in C and x86_64 assembly with a little C++20.</p>
+                </div>
+                <div class="arch reveal">
+                    <div class="layer" style="--c: var(--color-pink)"><b>APPLICATIONS</b><span>Files · Terminal · HTOP · HexEdit · Tetris · Doom</span></div>
+                    <div class="layer" style="--c: var(--color-mauve)"><b>DESKTOP / libgui</b><span>compositor, window manager, widgets</span></div>
+                    <div class="layer" style="--c: var(--color-blue)"><b>RING 3 · libc</b><span>hosted libc, libm, dynamic loader</span></div>
+                    <div class="layer" style="--c: var(--color-teal)"><b>SYSCALL ABI</b><span>~100 purec syscalls</span></div>
+                    <div class="layer" style="--c: var(--color-green)"><b>KERNEL</b><span>scheduler · SMP · VMM · VFS · IO scheduler</span></div>
+                    <div class="layer" style="--c: var(--color-peach)"><b>DRIVERS</b><span>AHCI · xHCI · e1000 · GOP/SVGA · PS/2 · HDA</span></div>
+                    <div class="layer" style="--c: var(--color-yellow)"><b>LIMINE → x86_64</b><span>long mode, higher-half</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="reveal">
+                    <div class="eyebrow">// the details</div>
+                    <h2 class="title">What you get <span class="serif">out of the box.</span></h2>
+                </div>
+                <div class="grid g3">
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-blue)">⚙</div>
+                        <h3>Kernel</h3>
+                        <ul>
+                            <li>SMP with per-core scheduling</li>
+                            <li>Copy-on-write fork and execve</li>
+                            <li>Pipes and POSIX-style signals</li>
+                            <li>ACPI: shutdown and reboot</li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-green)">▤</div>
+                        <h3>Storage</h3>
+                        <ul>
+                            <li>AHCI and ATA PIO drivers</li>
+                            <li>Mount-table VFS</li>
+                            <li>Full ext2, no stubs</li>
+                            <li>IO scheduler with background QoS</li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-mauve)">◧</div>
+                        <h3>Graphics</h3>
+                        <ul>
+                            <li>GOP, VBE and VMware SVGA II</li>
+                            <li>Live resolution change</li>
+                            <li>Interface scale 100–400%</li>
+                            <li>Flicker-free compositor</li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-peach)">⌨</div>
+                        <h3>Input</h3>
+                        <ul>
+                            <li>PS/2 keyboard and mouse</li>
+                            <li>USB mouse via xHCI and EHCI</li>
+                            <li>VirtualBox absolute pointer</li>
+                            <li>I2C-HID touchpad groundwork</li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-teal)">⇄</div>
+                        <h3>Networking</h3>
+                        <ul>
+                            <li>Intel PRO/1000 82540EM, 82543GC</li>
+                            <li>AMD PCnet-PCI II</li>
+                            <li>Atheros AR9285 port in progress</li>
+                            <li>802.11 association</li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico" style="--c: var(--color-pink)">#</div>
+                        <h3>Security</h3>
+                        <ul>
+                            <li>Users, groups and permissions</li>
+                            <li>SHA-512 password hashing</li>
+                            <li>Own RNG driver</li>
+                            <li>Login screen and login gate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap split">
+                <div class="reveal">
+                    <div class="eyebrow">// write apps for it</div>
+                    <h2 class="title">Compile C <span class="serif">on the OS itself.</span></h2>
+                    <p class="sub">TinyCC is ported, so you can write, compile and run Ring 3 programs without leaving PureC OS. Lua and MicroPython are there for quick scripts.</p>
+                    <div class="cta"><a class="btn" href="software.html">All ported software →</a></div>
+                </div>
+                <div class="reveal">
+                    <div class="window">
+                        <div class="win-bar"><b></b><b></b><b></b><span>terminal</span></div>
+                        <div class="code flat"><span class="c">$ cat hello.c</span>
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    printf("Hello from <span class="o">PureC OS</span>!\n");
+    return 0;
+}
+
+<span class="p">$</span> tcc hello.c -o hello &amp;&amp; ./hello
+<span class="p">Hello from PureC OS!</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="banner reveal">
+                    <h2 class="title">Dig into the <span class="serif">internals.</span></h2>
+                    <p class="sub">Syscall reference, one doc per driver and a porting guide live in the repository.</p>
+                    <div class="cta">
+                        <a class="btn primary" href="https://github.com/PureC-OS/PureC-OS/blob/main/docs/syscalls-reference.md" target="_blank" rel="noopener">Syscall reference ↗</a>
+                        <a class="btn" href="https://github.com/PureC-OS/PureC-OS/tree/main/docs/drivers" target="_blank" rel="noopener">Driver docs ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <a href="../index.html" class="brand"><img src="../static/img/purec-icon-catppuccin.svg" alt="">PureC OS</a>
+                    <p>A hand-written 64-bit operating system: kernel, drivers, filesystem, GUI and userspace, all built from scratch.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a href="features.html">Features</a>
+                    <a href="software.html">Ported software</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="changelog.html">Changelog</a>
+                </div>
+                <div>
+                    <h5>Get it</h5>
+                    <a href="install.html">Install guide</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS" target="_blank" rel="noopener">Source code</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/releases" target="_blank" rel="noopener">Releases</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/issues" target="_blank" rel="noopener">Report a bug</a>
+                </div>
+                <div>
+                    <h5>Docs</h5>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/docs/syscalls-reference.md" target="_blank" rel="noopener">Syscall reference</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/tree/main/docs/drivers" target="_blank" rel="noopener">Driver docs</a>
+                    <a href="https://github.com/PureC-OS/PureC-OS/blob/main/ported-software.md" target="_blank" rel="noopener">Porting guide</a>
+                </div>
+            </div>
+            <div class="legal"><span>© 2026 PureC OS</span></div>
+        </div>
+    </footer>
+
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/reveal.js"></script>
+    <script src="../static/js/spotlight.js"></script>
+</body>
+</html>
