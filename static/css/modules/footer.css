@@ -11,7 +11,7 @@ footer {
     gap: 36px;
 }
 
-.foot h5 {
+.foot h3 {
     font-family: var(--text-font-mono);
     font-size: var(--text-12-px);
     letter-spacing: 0.12em;
