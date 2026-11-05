@@ -1,9 +1,9 @@
-const io = new IntersectionObserver((entries) => {
+const countObserver = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
         if (!e.isIntersecting) {
             return;
         }
-        io.unobserve(e.target);
+        countObserver.unobserve(e.target);
         const end = +e.target.dataset.count;
         const suffix = e.target.dataset.suffix || "";
         const t0 = performance.now();
@@ -18,4 +18,4 @@ const io = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll("[data-count]").forEach((el) => io.observe(el));
+document.querySelectorAll("[data-count]").forEach((el) => countObserver.observe(el));
