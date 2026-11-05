@@ -1,4 +1,6 @@
 @import "modules/text.css";
+@import url('https://fonts.googleapis.com/css2?family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap');
+
 
 * {
     margin: 0;
@@ -13,6 +15,95 @@
 :root {
     --main-bg-color: #131313;
     --main-text: #fff;
+
+    --text-font-redaction: "Redaction 50", serif;
+
+
+    --text-left: left;
+    --text-center: center;
+    --text-right: right;
+    --text-end: end;
+
+    --text-1-px: 1px;
+    --text-2-px: 2px;
+    --text-3-px: 3px;
+    --text-4-px: 4px;
+    --text-5-px: 5px;
+    --text-6-px: 6px;
+    --text-7-px: 7px;
+    --text-8-px: 8px;
+    --text-9-px: 9px;
+    --text-10-px: 10px;
+    --text-11-px: 11px;
+    --text-12-px: 12px;
+    --text-13-px: 13px;
+    --text-14-px: 14px;
+    --text-15-px: 15px;
+    --text-16-px: 16px;
+    --text-17-px: 17px;
+    --text-18-px: 18px;
+    --text-19-px: 19px;
+    --text-20-px: 20px;
+    --text-21-px: 21px;
+    --text-22-px: 22px;
+    --text-23-px: 23px;
+    --text-24-px: 24px;
+    --text-25-px: 25px;
+    --text-26-px: 26px;
+    --text-27-px: 27px;
+    --text-28-px: 28px;
+    --text-29-px: 29px;
+    --text-30-px: 30px;
+    --text-31-px: 31px;
+    --text-32-px: 32px;
+    --text-33-px: 33px;
+    --text-34-px: 34px;
+    --text-35-px: 35px;
+    --text-36-px: 36px;
+    --text-37-px: 37px;
+    --text-38-px: 38px;
+    --text-39-px: 39px;
+    --text-40-px: 40px;
+    --text-41-px: 41px;
+    --text-42-px: 42px;
+    --text-43-px: 43px;
+    --text-44-px: 44px;
+    --text-45-px: 45px;
+    --text-46-px: 46px;
+    --text-47-px: 47px;
+    --text-48-px: 48px;
+    --text-49-px: 49px;
+    --text-50-px: 50px;
+    --text-51-px: 51px;
+    --text-52-px: 52px;
+    --text-53-px: 53px;
+    --text-54-px: 54px;
+    --text-55-px: 55px;
+    --text-56-px: 56px;
+    --text-57-px: 57px;
+    --text-58-px: 58px;
+    --text-59-px: 59px;
+    --text-60-px: 60px;
+    --text-61-px: 61px;
+    --text-62-px: 62px;
+    --text-63-px: 63px;
+    --text-64-px: 64px;
+    --text-65-px: 65px;
+    --text-66-px: 66px;
+    --text-67-px: 67px;
+    --text-68-px: 68px;
+    --text-69-px: 69px;
+    --text-70-px: 70px;
+    --text-71-px: 71px;
+    --text-72-px: 72px;
+    --text-73-px: 73px;
+    --text-74-px: 74px;
+    --text-75-px: 75px;
+    --text-76-px: 76px;
+    --text-77-px: 77px;
+    --text-78-px: 78px;
+    --text-79-px: 79px;
+    --text-80-px: 80px;
 }
 
 body {
