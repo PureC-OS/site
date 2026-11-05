@@ -35,46 +35,21 @@
         <div class="wrap page-head reveal">
             <div class="eyebrow">// changelog</div>
             <h1 class="page-title">What is new in<br><span class="serif grad">PureC OS.</span></h1>
-            <p class="sub">Highlights of the current release. The complete, detailed log lives in the repository.</p>
+            <p class="sub">Loaded live from CHANGELOG.md in the repository, so this page always matches the code.</p>
         </div>
 
         <section>
             <div class="wrap">
-                <div class="release reveal">
-                    <div class="ver">v1.2.28<small>current</small></div>
-                    <div>
-                        <h3>Accounts, new installer, RNG driver and a VFS mount table</h3>
-                        <h4>Desktop</h4>
-                        <ul>
-                            <li>Application icons from one consistent Material Symbols set, rasterized at build time and tinted for contrast on each tile</li>
-                            <li>Icon grid with snap-to-cell dragging, a drop preview frame and a layout saved between sessions</li>
-                            <li>Interface scale from 100% to 400% and a terminal font size you can change in Settings</li>
-                        </ul>
-                        <h4>Installer</h4>
-                        <ul>
-                            <li>Fully rewritten as a graphical wizard: Welcome, Disk, Computer, Account, Review and Install</li>
-                            <li>Anti-aliased rounded shapes, gradients and shadows drawn in its own buffer with no flicker</li>
-                            <li>Disk cards with model, size and bus type, plus a partition layout preview</li>
-                        </ul>
-                        <h4>Graphics and input</h4>
-                        <ul>
-                            <li>Double-buffered compositor: windows no longer show half-drawn frames while moving</li>
-                            <li>Live resolution switching on VMware SVGA II, as used by VirtualBox</li>
-                            <li>Absolute mouse pointer in VirtualBox, so the cursor never drifts from the host</li>
-                            <li>Fixed a deadlock that froze the system after dragging a window</li>
-                        </ul>
-                        <h4>Kernel and IO</h4>
-                        <ul>
-                            <li>Storage drivers moved into a new IO subsystem with an IO scheduler and background QoS</li>
-                            <li>Installation and swapping no longer freeze the interface</li>
-                            <li>Permissions and accounts, an RNG driver, ext2 without stubs and a mount-table VFS</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="banner reveal">
-                    <h2 class="title">The full history is <span class="serif">on GitHub.</span></h2>
-                    <div class="cta">
-                        <a class="btn primary" href="https://github.com/PureC-OS/PureC-OS/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Read CHANGELOG.md ↗</a>
+                <div id="changelog">
+                    <div class="release">
+                        <div class="ver">v1.2.28<small>current</small></div>
+                        <div>
+                            <h3>Accounts, new installer, RNG driver and a VFS mount table</h3>
+                            <p class="sub">The full changelog could not be loaded right now. Read it on GitHub:</p>
+                            <div class="cta">
+                                <a class="btn primary" href="https://github.com/PureC-OS/PureC-OS/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Read CHANGELOG.md ↗</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,5 +91,6 @@
     <script src="../static/js/nav.js"></script>
     <script src="../static/js/reveal.js"></script>
     <script src="../static/js/spotlight.js"></script>
+    <script src="../static/js/changelog.js"></script>
 </body>
 </html>

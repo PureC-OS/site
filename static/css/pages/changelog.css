@@ -69,3 +69,232 @@
         position: static;
     }
 }
+
+.cl-tools {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.cl-search {
+    flex: 1 1 280px;
+    padding: 13px 18px;
+    border-radius: 14px;
+    border: 1px solid var(--color-surface1);
+    background: var(--color-mantle);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: var(--text-16-px);
+}
+
+.cl-search:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.cl-toggle {
+    padding: 12px 22px;
+}
+
+.cl-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    align-items: start;
+}
+
+.cl-index {
+    position: sticky;
+    top: 96px;
+    display: grid;
+    gap: 2px;
+}
+
+.cl-index-title {
+    font-family: var(--text-font-mono);
+    font-size: var(--text-12-px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-overlay);
+    margin-bottom: 8px;
+}
+
+.cl-index a {
+    padding: 7px 12px;
+    border-radius: 10px;
+    font-family: var(--text-font-mono);
+    font-size: var(--text-14-px);
+    color: var(--color-subtext);
+    transition: color 0.2s, background 0.2s;
+}
+
+.cl-index a:hover {
+    color: var(--color-text);
+    background: var(--color-hover);
+}
+
+.cl-list {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+}
+
+.rel {
+    border: 1px solid var(--color-surface0);
+    border-radius: 20px;
+    background: var(--color-mantle);
+    overflow: hidden;
+}
+
+.rel[hidden],
+.cl-index a[hidden],
+.rel li[hidden],
+.rel h3[hidden],
+.rel h4[hidden] {
+    display: none;
+}
+
+.rel-sum {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 26px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.rel-sum::-webkit-details-marker {
+    display: none;
+}
+
+.rel-sum::after {
+    content: "+";
+    margin-left: auto;
+    font-family: var(--text-font-mono);
+    font-size: var(--text-24-px);
+    color: var(--color-subtext);
+}
+
+.rel[open] > .rel-sum::after {
+    content: "−";
+}
+
+.rel-sum:hover {
+    background: var(--color-faint);
+}
+
+.rel-ver {
+    flex: none;
+    padding: 4px 14px;
+    border-radius: 99px;
+    font-family: var(--text-font-mono);
+    font-size: var(--text-14-px);
+    font-weight: 700;
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+.rel-title {
+    font-size: var(--text-19-px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--main-text);
+    min-width: 0;
+}
+
+.rel-meta {
+    flex: none;
+    font-family: var(--text-font-mono);
+    font-size: var(--text-13-px);
+    color: var(--color-overlay);
+}
+
+.rel-body {
+    padding: 4px 26px 28px;
+    border-top: 1px solid var(--color-line);
+}
+
+.rel-group {
+    margin: 34px 0 4px;
+    padding-top: 6px;
+    font-size: var(--text-24-px);
+    letter-spacing: -0.02em;
+    color: var(--main-text);
+}
+
+.rel-sec {
+    margin: 26px 0 8px;
+    font-size: var(--text-17-px);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.rel-list {
+    list-style: none;
+    display: grid;
+    gap: 2px;
+}
+
+.rel-list li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    font-size: var(--text-16-px);
+    color: var(--color-subtext);
+    overflow-wrap: anywhere;
+}
+
+.rel-list li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: var(--color-green);
+    font-family: var(--text-font-mono);
+    font-weight: 700;
+}
+
+.rel-list li.note::before {
+    content: "·";
+}
+
+.rel strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.rel a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.cl-empty {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--color-subtext);
+}
+
+@media (max-width: 960px) {
+    .cl-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cl-index {
+        display: none;
+    }
+
+    .rel-sum {
+        flex-wrap: wrap;
+        padding: 18px 20px;
+    }
+
+    .rel-title {
+        flex: 1 1 100%;
+        order: 3;
+    }
+
+    .rel-body {
+        padding: 4px 18px 22px;
+    }
+}
